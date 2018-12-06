@@ -1,0 +1,28 @@
+ion-textarea{
+     background-color: rgba(104,180,245,0.50);
+    color: black;
+}
+
+.fo{
+    margin-top: 60px;
+    text-align: center;
+}
+
+.comment{
+    opacity: 1;
+    transition: 1s linear !important;
+}
+
+.messageAfter{
+    position: absolute;
+    top: 135px;
+}
+
+.btnBack{
+    position: relative;
+    z-index: 999;
+    top:180px !important;
+    cursor: pointer;
+    
+   
+}

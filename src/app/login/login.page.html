@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title *ngIf='!Flag'>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+  <div class='Login' *ngIf='!Flag'>
+    <img class="animated infinite pulse delay-1s" src='assets/img/logo.png'>
+    <form #LoginForm='ngForm'  (ngSubmit)='onSubmit()'>
+   
+
+  
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input type='text' name='nombre'  #nombre='ngModel' [(ngModel)]="user.nombre" 
+        clearOnEdit=false (keyup.enter)='user.nombre && user.contrasenia ? onSubmit() : false'
+          inputmode='text' required></ion-input>
+          
+      </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input type='password' name='contrasenia' #contrasenia='ngModel' [(ngModel)]="user.contrasenia"  
+      clearOnEdit=false (keyup.enter)='user.nombre && user.contrasenia ? onSubmit() : false' 
+      inputmode='password' required></ion-input>
+      
+    </ion-item>
+
+    <br/>
+
+    <div class="center">
+      
+            <ion-button type='submit' shape='round' size="large" color='tertiary' [disabled]='!user.nombre || !user.contrasenia'>Conectarse</ion-button>
+    
+    </div>
+
+    </form>
+  </div>
+
+  <div class='center' *ngIf='Flag'>
+    <div class='titulo'> Bienvenido </div>
+    <img src='assets/img/Caminar.gif' class='btnEncontrar'>
+    
+      <ion-button color='tertiary' shape='round' [routerLink]="['/Departamentos']" class='btnEncontrar'>Encontrar departamentos</ion-button>
+   
+  </div>
+
+
+</ion-content>

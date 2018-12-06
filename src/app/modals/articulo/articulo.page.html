@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> {{nombreArt}} </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <div class='center'>
+      <img src='{{img}}'> <br/>
+      <h3> Este articulo ofrece...</h3> <br/>
+      <p> {{descripcion}} </p>
+      
+      <ion-button (click)='closeModal()' color='tertiary'>Cerrar</ion-button>
+      </div>
+</ion-content>

@@ -1,31 +1,39 @@
+
+  <ion-header>
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button></ion-menu-button>
+          <ion-back-button goBack defaultHref='/Departamentos'></ion-back-button>
+        </ion-buttons>
+        <ion-title> Busqueda </ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+<!-- Tabs de la seccion ubicacion-->
 <ion-tabs>
 
   <ion-tab tab="home">
     <ion-router-outlet name="home"></ion-router-outlet>
   </ion-tab>
   <ion-tab tab="about">
-    <ion-router-outlet name="about"></ion-router-outlet>
+    <ion-router-outlet name="articulos"></ion-router-outlet>
   </ion-tab>
-  <ion-tab tab="contact">
-    <ion-router-outlet name="contact"></ion-router-outlet>
-  </ion-tab>
+  
 
   <ion-tab-bar slot="bottom">
 
-    <ion-tab-button tab="home" href="/tabs/(home:home)">
-      <ion-icon name="home"></ion-icon>
-      <ion-label>Home</ion-label>
+    <ion-tab-button tab="home" href="/tabs/tabs/{{id}}/(home:home/{{id}})">
+      <ion-icon [ngClass]="{'yellow': selectedTab == 'home' }" name="walk"></ion-icon>
+      <ion-label>Ubicación</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="about" href="/tabs/(about:about)">
-      <ion-icon name="information-circle"></ion-icon>
-      <ion-label>About</ion-label>
+    <ion-tab-button tab="about" href="/tabs/tabs/{{id}}/(articulos:articulos/{{id}})">
+      <ion-icon [ngClass]="{'yellow': selectedTab == 'about' }" name="outlet"></ion-icon>
+      <ion-badge [color]="selectedTab == 'about' ? 'tertiary' : 'medium' " > {{cantidad}} </ion-badge>
+      <ion-label>Articulos</ion-label>
     </ion-tab-button>
 
-    <ion-tab-button tab="contact" href="/tabs/(contact:contact)">
-      <ion-icon name="contacts"></ion-icon>
-      <ion-label>Contact</ion-label>
-    </ion-tab-button>
+   
 
   </ion-tab-bar>
 

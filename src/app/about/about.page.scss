@@ -1,1 +1,29 @@
+.faq{
+    color: #212121;
+    margin-top: 30px;
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    opacity: 1;
+    transition: 1s linear !important;
+    border-radius: 15px 5px;
+   
+}
 
+.cerrarFaq{
+    color:#212121;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 10px;
+    border-radius: 15px 5px;
+
+}
+
+a{
+     background-color: rgba(104,180,245,0.50);
+}
+
+img{
+    width: 380px;
+    height: 400px;
+}

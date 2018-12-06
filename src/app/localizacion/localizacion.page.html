@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot='start'>
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref='/Departamentos'></ion-back-button>
+    </ion-buttons>
+    <ion-title>Localización</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+    <h2> Solicita la asistencia de un trabajador </h2>
+    <div class='centerImg'>
+      <img src='assets/img/trabajador.jpg'>
+    </div>
+
+    <div class='center downBtn'>
+
+      <ion-button shape='round' color='tertiary' (click)="load()">
+        <ion-icon name='wifi'></ion-icon>Solicitar
+      </ion-button>
+
+    </div>
+</ion-content>

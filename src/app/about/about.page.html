@@ -1,7 +1,43 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>About</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button goBack defaultHref='/Departamentos'></ion-back-button>
+    </ion-buttons>
+    <ion-title> Preguntas frecuentes </ion-title>
+    
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+
+
+<ion-content padding>
+  <h3>FAQ</h3>
+
+<a  id='how1' (click)="faqSHOW(1)" class='button faq' >¿Cómo utilizar la app?</a>
+<div class='animated delay-0.4s bounceInRight' id="myDIV1" style='display:none;'>
+  <img src='assets/videos/howto.gif'>
+  <br/><br />
+
+  <a (click)='cerrarFaq(1)' class='cerrarFaq'>Cerrar</a>
+</div>
+<a id='how2' (click)="faqSHOW(2)" class='button faq'>¿Tiene algun costo?</a>
+<div class='animated delay-0.4s bounceInRight' id="myDIV2" style='display:none;'>
+  No <br/><br />
+
+
+<a  (click)='cerrarFaq(2)' class='cerrarFaq'>Cerrar</a>
+</div>
+<a id='how3' (click)="faqSHOW(3)" class='button faq'>¿Cómo puedo compartir la app con mis amigos?</a>
+<div class='animated delay-0.4s bounceInRight' id="myDIV3" style='display:none;'>
+  <img src='assets/videos/social.gif'>
+   <br/><br />
+
+  <a (click)='cerrarFaq(3)' class='cerrarFaq'>Cerrar</a>
+</div>
+
+
+
+
+
+</ion-content>

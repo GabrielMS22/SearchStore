@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "124101210071",
+    "firebase_url": "https://storesearch-d873d.firebaseio.com",
+    "project_id": "storesearch-d873d",
+    "storage_bucket": "storesearch-d873d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124101210071:android:c117c456502341e4",
+        "android_client_info": {
+          "package_name": "com.searchstore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124101210071-pq9lf88vbu098rt9n5fsavobabttegv5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBb1JIfFzHvYGenk0_V7jf8vDFKeqMTw4k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

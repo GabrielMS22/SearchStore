@@ -1,0 +1,65 @@
+
+
+<!-- Default Refresher -->
+<ion-content padding>
+
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content>Refrescando</ion-refresher-content>
+  </ion-refresher>
+
+<div class='searchBar' *ngIf='!spinner'>
+<p>Introduzca el producto que busca</p>
+<ion-searchbar [(ngModel)]="busqueda" (ionInput) = 'filteredItems()'color='light' mode='ios' type='search' placeholder='Buscar' animated="true" color='tertiary' show-cancel-button cancelButtonText='Cancelar' debounce="500">
+</ion-searchbar>
+</div>
+
+<br /><br />
+
+<div *ngIf='spinner'>
+  
+<div class="spinner">
+  <div class="cube1"></div>
+  <div class="cube2"></div>
+</div>
+</div>
+
+  <span *ngIf='listbusqueda && busqueda'>
+    <div >
+      <ion-list>
+        <ion-item *ngFor='let list of listbusqueda' class='animated fadeInRightBig'>
+          <ion-avatar slot="start">
+            <ion-img src="{{list.img}}" ></ion-img>
+          </ion-avatar>
+          <ion-label>
+            <h2> {{list.nombreArt}} </h2>
+            <h3>Los mejores productos</h3>
+            
+            <ion-button color='tertiary' (click)='modalArticulo(list.nombreArt, list.descripcionArt, list.img)'>Ver información</ion-button>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </div>
+  </span>
+
+
+  
+<br/><br />
+
+ 
+
+<ion-list>
+  <ion-item *ngFor='let articulo of articulos' class='animated fadeInRightBig'>
+    <ion-avatar slot="start">
+      <ion-img src="{{articulo.img}}" ></ion-img>
+    </ion-avatar>
+    <ion-label >
+      <h2> {{articulo.nombreArt}} </h2>
+      <h3>Los mejores productos</h3>
+      <ion-button color='tertiary' (click)='modalArticulo(articulo.nombreArt, articulo.descripcionArt, articulo.img)'>Ver información</ion-button>
+    </ion-label>
+  </ion-item>
+</ion-list>
+ 
+
+    
+</ion-content>

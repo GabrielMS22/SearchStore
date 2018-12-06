@@ -1,0 +1,54 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title> Departamentos </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content padding>
+
+<ion-fab class='animated infinite pulse' vertical="bottom" horizontal="start" id="fab4" slot="fixed">
+  <ion-fab-button mini (click)="clickMainFAB('fab4')" id='fabBtn' [color]="selectedFab == true ? 'danger' : 'tertiary' ">
+    <ion-icon name="arrow-dropright"></ion-icon>
+  </ion-fab-button>
+  <ion-fab-list side="end">
+    <ion-fab-button color='tertiary' (click)="openSocial('facebook', 'fab4')">
+      <ion-icon name="logo-facebook" ></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button color='secondary' (click)="openSocial('twitter', 'fab4')">
+      <ion-icon name="logo-twitter"></ion-icon>
+    </ion-fab-button>
+   
+    <ion-fab-button color='medium' (click)="openSocial('instagram', 'fab4')">
+      <ion-icon name="logo-instagram"></ion-icon>
+    </ion-fab-button>
+  </ion-fab-list>
+</ion-fab>
+
+  <h1 class='center'> Departamento</h1>
+    <ion-slides  pager="true">
+      <ion-slide *ngFor='let departamento of Departamentos' style='display: block'>
+        
+        <ion-spinner name="dots" color='tertiary'></ion-spinner>
+
+        <ion-item>
+          <h3> {{ departamento.Nombre }} </h3><br />
+          <ion-icon name="locate" slot="end" color='primary'></ion-icon>
+
+          <ion-button href='/tabs/tabs/{{departamento.id}}/(home:home/{{departamento.id}})' shape='round' color='tertiary' slot="end"> Ubicación</ion-button>
+
+        </ion-item>
+        <img [ngClass]="{'animated rubberBand ': kappa==true}" src='/{{departamento.img}}' style='width:430px; height: 310px;'>
+        <br />
+
+
+      </ion-slide>
+    </ion-slides>
+
+
+</ion-content>

@@ -3,12 +3,12 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { TabsPage } from './tabs.page';
 import { HomePage } from '../home/home.page';
-import { AboutPage } from '../about/about.page';
-import { ContactPage } from '../contact/contact.page';
+import { ArticulosPage } from '../articulos/articulos.page';
+
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: 'tabs/:ID',
     component: TabsPage,
     children: [
       {
@@ -17,25 +17,20 @@ const routes: Routes = [
         pathMatch: 'full',
       },
       {
-        path: 'home',
+        path: 'home/:ID',
         outlet: 'home',
         component: HomePage
       },
       {
-        path: 'about',
-        outlet: 'about',
-        component: AboutPage
-      },
-      {
-        path: 'contact',
-        outlet: 'contact',
-        component: ContactPage
+        path: 'articulos/:ID',
+        outlet: 'articulos',
+        component: ArticulosPage
       }
     ]
   },
   {
-    path: '',
-    redirectTo: '/tabs/(home:home)',
+    path: 'tabs',
+    redirectTo: 'tabs/(home:home)',
     pathMatch: 'full'
   }
 ];

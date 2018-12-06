@@ -4,14 +4,16 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AboutPage } from './about.page';
+import { ExpandableComponent } from '../expandable/expandable.component';
 
 @NgModule({
+  
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
     RouterModule.forChild([{ path: '', component: AboutPage }])
   ],
-  declarations: [AboutPage]
+  declarations: [AboutPage, ExpandableComponent]
 })
 export class AboutPageModule {}

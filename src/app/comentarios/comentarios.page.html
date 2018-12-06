@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+      <ion-back-button defaultHref='/Departamentos'></ion-back-button>
+    </ion-buttons>
+    <ion-title>Comentarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+
+ <!-- Mensaje de Gracias-->
+ <span #gracias id='gracias' class='messageAfter animated delay-1s bounceIn center' *ngIf='message == true'>
+   <h1>Gracias por tu comentario!</h1> <br/>
+   <img src='assets/img/guiño.png' class='imag'>
+  </span>
+
+  <!-- Boton regresar-->
+  <span  *ngIf='btnBack == true'>
+    <div class='center' ><ion-button color='danger' class='animated delay-2s bounceIn btnBack' (click)='moveBack()'> Regresar </ion-button> </div>
+  </span>
+
+<!-- Envio de comentarios-->
+<form>
+  <div #comment class='comment' >
+    <img src='assets/img/comentarios.jpg'> 
+    <h2>En SearchStore tus comentarios cuentan</h2>
+    <div class='fo'>
+      <ion-textarea type='text' [(ngModel)]="dataComment.comment" name='comment' placeholder="Escriba su comentario aqui!"> </ion-textarea> <br/>
+
+        <span *ngIf='!stateMessage' class='animated bounceInRight delay-1s center'>
+          Porfavor, escriba su comentario en el campo de arriba <br/>
+        </span>
+
+      <ion-button  (click)='sendComment()' color='tertiary' >  Enviar comentario</ion-button>
+    </div>
+
+ </div>
+
+</form>
+
+  
+
+ 
+
+</ion-content>
